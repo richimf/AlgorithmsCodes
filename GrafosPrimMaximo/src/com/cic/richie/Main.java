@@ -93,7 +93,8 @@ public class Main {
                 fe = e;
                 continue;
             }
-            if (minw > w) {
+            //ALGORITMO DE PRIM MAXIMO, CAMBIA CONDICION, ELIGE EL PESO MAXIMO
+            if (minw < w) {
                 minw = w;
                 fe = e;
                 continue;
