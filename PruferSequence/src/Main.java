@@ -20,24 +20,25 @@ Entonces, eliminamos i1 de I y s1 de S. Este proceso se repite hasta que I se qu
 */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
     // Vertex : Adjacency List
-    static AdjacencyList<String> al = new AdjacencyList<>();
+    static AdjacencyList<Integer> al = new AdjacencyList<>();
 
     public static void main(String[] args){
 
         //Setting up the Tree
-        Vertex a = al.createVertex("1");
-        Vertex b = al.createVertex("2");
-        Vertex c = al.createVertex("3");
-        Vertex d = al.createVertex("4");
-        Vertex e = al.createVertex("5");
-        Vertex f = al.createVertex("6");
-        Vertex g = al.createVertex("7");
-        Vertex h = al.createVertex("8");
+        Vertex a = al.createVertex(1);
+        Vertex b = al.createVertex(2);
+        Vertex c = al.createVertex(3);
+        Vertex d = al.createVertex(4);
+        Vertex e = al.createVertex(5);
+        Vertex f = al.createVertex(6);
+        Vertex g = al.createVertex(7);
+        Vertex h = al.createVertex(8);
 
         al.addEdge(a, b);
         al.addEdge(a, c);
@@ -46,6 +47,13 @@ public class Main {
         al.addEdge(d, f);
         al.addEdge(d, g);
         al.addEdge(d, h);
+
+        Vertex[] S = {h,h,g,f,e,d,c,b,a};
+        mergeSort(0,S.length-1, S);
+
+        for(int i = 0; i < S.length; i++) {
+            System.out.println(S[i].getData().toString());
+        }
 
         //Show values
         System.out.println("\nAdjacency List:\n");
@@ -84,16 +92,31 @@ public class Main {
        }
     }
 
-    private static Vertex[] sortSequence(){
-        return ;
+    //MergeSort from Low to High, the sequence is S.
+    private static  Vertex[]  mergeSort(Vertex... S){
+
+        //0, base case
+        if(S.length == 1){
+            return S;
+        }
+
+        // 1, indice del elemento de enmedio
+        int mid = S.length/2;
+
+        // 2, crea dos arrays, uno izquierdo que contenga la primera mitad y otro derecho para la segunda mitad.
+        Vertex[] left = Arrays.copyOfRange(S, 0, mid);
+        Vertex[] right = Arrays.copyOfRange(S, mid, S.length);
+
+        left= mergeSort(left);
+        right =mergeSort(right);
+
+        return merge(left, right);
+
     }
 
-    //        createTree("1","2","3","4","5");
-//    private static void createTree(String... values){
-//        for(int i = 0; i < values.length; i++){
-//            System.out.println(values[i]);
-//            Vertex a = al.createVertex(values[i]);
-//        }
-//    }
+    private static Vertex[] merge(Vertex[] a, Vertex[]b){
+
+        return
+    }
 
 }

@@ -3,7 +3,6 @@
 public class Vertex<T> {
 
     private T data;
-    private T label;
 
     //Constructor
     public Vertex(){
@@ -11,11 +10,6 @@ public class Vertex<T> {
 
     public Vertex(T data) {
         this.data = data;
-    }
-
-    public Vertex(T data, T label) {
-        this.data = data;
-        this.label = label;
     }
 
     //Getters and Setters
@@ -27,11 +21,4 @@ public class Vertex<T> {
         this.data = data;
     }
 
-    public T getLabel() {
-        return label;
-    }
-
-    public void setLabel(T label) {
-        this.label = label;
-    }
 }
