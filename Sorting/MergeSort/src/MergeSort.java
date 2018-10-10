@@ -4,7 +4,7 @@ public class MergeSort {
 
     public static void main(String args[]) {
 
-        int[] array = {7, 2, 6, 3, 9, 1};
+        int[] array = {8, 1, 6, 33, 99, 3};
         int output[] = mergeSort(array);
         int s = output.length;
     }
@@ -61,13 +61,11 @@ public class MergeSort {
             j++;
             leftIndex++;
         }
-
         while (rightIndex < right.length) {
             output[j] = right[rightIndex];
             j++;
             rightIndex++;
         }
-
         return output;
     }
 
@@ -82,8 +80,6 @@ public class MergeSort {
             temp[j] = array[i];
             j++;
         }
-
         return temp;
     }
-
 }
