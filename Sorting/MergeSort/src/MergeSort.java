@@ -1,4 +1,5 @@
 
+//The merge sort algorithm
 public class MergeSort {
 
     public static void main(String args[]) {

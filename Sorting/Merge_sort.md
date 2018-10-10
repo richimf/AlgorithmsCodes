@@ -14,10 +14,5 @@ La idea basica es dividie un problema grande en problemas pequeños. Divde and c
 
 ej. `[2,7]` y `[6]` y esto da... `[2, 6, 7]`
 
-## Código completo
-
-
-
-
 
 
